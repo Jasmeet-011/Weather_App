@@ -3,9 +3,10 @@
   filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5)); /* Add a drop shadow to the icon */
   color: #000; /* Change the icon color to black */
 }
-.block-h1 {
+.block-h2 {
   display: block;
 }
+
 
 @media (max-width: 768px) {
 	.box {

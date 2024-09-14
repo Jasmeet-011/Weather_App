@@ -6,7 +6,7 @@ const weatherEle = document.querySelector("#city-weather");
 const time = document.querySelector("#timezone");
 const cityNameEle = document.querySelector("#city-name");
 const dateEle = document.querySelector("#date");
-
+const icon = document.getElementById("temperature-icon");
 const months = [
   "January",
   "February",
@@ -21,6 +21,7 @@ const months = [
   "November",
   "December",
 ];
+icon.innerHTML = "<i class='fa-solid fa-thermometer-half'></i>";
 
 async function fetching(city) {
   const response = await fetch(
@@ -69,6 +70,25 @@ async function updateHTML(data, currentTimeData) {
   cityNameEle.textContent = cityNameFromAPI;
   time.textContent = formattedTime;
   dateEle.textContent = currentDate;
+
+  // Change the icon based on the weather
+  const weatherIcon = getWeatherIcon(weather);
+  icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${weatherIcon}@2x.png" alt="${weather}" style="height: 2em; width: auto">`;
+}
+
+function getWeatherIcon(weather) {
+  switch (true) {
+    case weather.includes("Cloud"):
+      return "02d"; // Cloudy
+    case weather.includes("Rain"):
+      return "10d"; // Rain
+    case weather.includes("Sun"):
+      return "01d"; // Sunny
+    case weather.includes("Snow"):
+      return "13d"; // Snow
+    default:
+      return "02d"; // Default to cloudy
+  }
 }
 
 btn.addEventListener("click", async function () {
