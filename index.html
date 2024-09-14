@@ -22,7 +22,7 @@
     <section class="container bg-light mt-5 p-5 text-dark"style="background-image: url('background-img.jpg'); background-size: cover; background-position: center;">
       <form class="row mb-5">
         <div class="col d-flex justify-content-center">
-          <input type="text" id="city" class="form-control" placeholder="Enter City">
+          <input type="text" id="city" class="form-control" placeholder="Enter City-name ">
           <button class="btn btn-white btn-outline-secondary" type="button" id="button" style="background-color: #FFFFFF; ">
             <i class="fa-solid fa-magnifying-glass"></i>
           </button>
@@ -34,14 +34,17 @@
         </div>
       </div>
       <div class="row mb-5">
-        <div class="col d-flex justify-content-center mb-5">
-          <h1 id="temperature">28&deg;C</h1>
+        <div class="col d-flex flex-column justify-content-center align-items-center mb-5">
+          
+          <h1 id="temperature" class="block-h1">28&deg;C</h1>
+          
+          <h1 id="city-weather" class="block-h1">Cloudy</h1>
         </div>
       </div>
       <div class="row mt-5 mb-5">
         <div class="col mb-5 mt-5">
           <div class="box bg-white p-3 h-60 d-flex flex-column justify-content-center align-items-center" style="max-width: 320px; width: 100%; margin: 0 auto;">
-            <h1 id="time">08:30 AM</h1>
+            <h1 id="timezone">08:30 AM</h1>
             <p id="date">Wednesday 1 December 2021</p>
           </div>
         </div>
